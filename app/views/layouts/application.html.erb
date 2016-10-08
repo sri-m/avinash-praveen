@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Praveen</title>
+    <%= csrf_meta_tags %>
+
+    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<!-- header -->
+	<%= render :partial => "homes/header1" %>
+	<!-- menu -->
+	<%= render partial: "homes/menu" %>
+    <!-- menu -->
+    <%= render partial: "homes/slider" %>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="content">
+			<div class="contentbg">
+				<%= yield %>
+			</div>
+		</div>
+		<!-- end #content -->
+		<!-- sidebar -->
+		<%= render partial: "homes/sidebar" %>
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end #page --> 
+</div>
+<!-- footer -->
+<%= render partial: "homes/footer" %>
+</body>
+</html>
