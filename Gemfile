@@ -4,7 +4,16 @@ gem 'will_paginate'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+#gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem "heroku"
+gem "therubyracer"
+group :development, :test do
+    gem "mysql2"
+    #gem 'taps'
+end
+group :production do
+    gem "pg"   #heroku supports only pg db
+end
 # Use Puma as the app server  #webrick
 #gem 'puma', '~> 3.0'
 gem 'thin'
